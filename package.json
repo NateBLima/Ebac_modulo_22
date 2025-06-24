@@ -1,7 +1,7 @@
 {
-  "name": "cy-pageobjects",
+  "name": "cy-appactions",
   "version": "1.0.0",
-  "description": "Exemplo de pageobjects",
+  "description": "Exemplo de appactions",
   "main": "index.js",
   "scripts": {
     "test": "npx cypress open"
