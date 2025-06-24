@@ -1,0 +1,22 @@
+{
+  "name": "cy-pageobjects",
+  "version": "1.0.0",
+  "description": "Exemplo de pageobjects",
+  "main": "index.js",
+  "scripts": {
+    "test": "npx cypress open"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NateBLima/UI_Test_Patterns.git"
+  },
+  "author": "Nathan B Lima",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/NateBLima/UI_Test_Patterns/issues"
+  },
+  "homepage": "https://github.com/NateBLima/UI_Test_Patterns#readme",
+  "dependencies": {
+    "cypress": "^14.5.0"
+  }
+}
