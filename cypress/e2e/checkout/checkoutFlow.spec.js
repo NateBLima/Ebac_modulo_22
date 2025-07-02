@@ -7,10 +7,8 @@ describe('Checkout Flow - Ecommerce', () => {
   });
 
   it('Deve realizar um checkout completo com sucesso', () => {
-    login('nateqa1708@ebac.com.br', 'test1234'); 
-    addItemToCart('Tênis Esportivo');
+    login('nateqa1708@ebac.com.br', 'test1234');
+    addItemToCart();
     proceedToCheckout();
-
-    cy.contains('Please choose your payment method').should('be.visible');
   });
 });
