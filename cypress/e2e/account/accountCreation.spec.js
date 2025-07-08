@@ -1,27 +1,22 @@
-import { AccountPage } from '../../pages/accountPage';
+import { faker } from '@faker-js/faker';
 
-const accountPage = new AccountPage();
-
-describe('Criação de Conta - Ecommerce', () => {
+describe('Criação de Conta - Dados Dinâmicos', () => {
   beforeEach(() => {
     cy.setCookie('EbacStoreVersion', 'V2');
-    accountPage.visit();
+    cy.visit('/index.php?controller=authentication&back=my-account');
   });
 
   it('Deve criar uma conta com sucesso', () => {
-    const email = 'nateqa1708@ebac.com.br';
+    const nome = faker.person.fullName();
+    const email = faker.internet.email();
+    const senha = 'Teste@123';
 
-    accountPage.fillForm({
-      firstName: 'Nathan',
-      lastName: 'Brandão',
-      password: 'test1234',
-      email,
-      mobile: '31999999999'
-    });
+    cy.get('[data-testid="create-account-tab"]').click();
+    cy.get('[data-testid="name"] input').type(nome);
+    cy.get('[data-testid="email"] input').type(email);
+    cy.get('[data-testid="password"] input').type(senha);
+    cy.get('[data-testid="btnRegister"] > .css-146c3p1').click();
 
-    accountPage.submitForm();
-    accountPage.profileConfirm();
-
-    cy.contains('Brandão').should('be.visible');
+    cy.contains('Welcome').should('be.visible');
   });
 });
