@@ -18,7 +18,7 @@
   "homepage": "https://github.com/NateBLima/UI_Test_Patterns#readme",
   "devDependencies": {
     "@faker-js/faker": "^9.9.0",
-    "cypress": "^14.5.1",
+    "cypress": "^9.7.0",
     "cypress-lens": "^1.16.0"
   }
 }
