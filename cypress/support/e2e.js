@@ -1,5 +1,1 @@
-import'./commands';
-
-beforeEach(() => {
-  cy.setCookie('EbacStoreVersion', 'V2');
-});
+import './commands';
