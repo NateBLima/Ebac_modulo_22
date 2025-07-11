@@ -1,0 +1,105 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2025-07-11T17:05:59.549Z",
+    "end": "2025-07-11T17:06:04.514Z",
+    "duration": 4965,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "55157948-347d-40fa-898b-ea8c63e60bc8",
+      "title": "",
+      "fullFile": "cypress\\e2e\\cartIntercept.cy.js",
+      "file": "cypress\\e2e\\cartIntercept.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "8cfe97ab-ede7-4666-9add-3f463699e2f2",
+          "title": "Fluxo completo: login, adicionar ao carrinho e finalizar",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Deve logar, adicionar item, acessar carrinho e finalizar pedido",
+              "fullTitle": "Fluxo completo: login, adicionar ao carrinho e finalizar Deve logar, adicionar item, acessar carrinho e finalizar pedido",
+              "timedOut": null,
+              "duration": 4875,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// Login\ncy.visit('/');\ncy.get('[href=\"/Tab/Account\"] > .r-g6644c').click();\ncy.get('[data-testid=\"email\"]').type('nateqa1708@ebac.com.br');\ncy.get('[data-testid=\"password\"]').type('test1234');\ncy.get('[data-testid=\"btnLogin\"] > .css-146c3p1').click();\n// Seleciona produto e adiciona ao carrinho\ncy.get('[data-testid=\"home-popular-product-list\"] > [style=\"padding-right: 10px; padding-left: 10px;\"] > :nth-child(1)').click();\ncy.get('[data-testid=\"addToCart\"] > .css-146c3p1').click();\n// Vai para o perfil (acesso ao carrinho)\ncy.get('[href=\"/Tab/Account\"] > .r-g6644c').click();\n// Acessa o carrinho (botão aninhado)\ncy.get('[style=\"background-color: rgb(242, 242, 242);\"] > :nth-child(1) > :nth-child(1) > :nth-child(1) > :nth-child(1) > :nth-child(1) > :nth-child(1) > :nth-child(1) > :nth-child(1) > .r-1d5kdc7 > :nth-child(1) > :nth-child(1) > .r-13awgt0 > :nth-child(1) > .r-mh9cjk > .r-18u37iz > :nth-child(2) > .css-146c3p1').click();\n// Validação de produto no carrinho\ncy.contains('bag Charlotte').should('exist');",
+              "err": {},
+              "uuid": "d8756f89-5e1f-4a38-a855-0deafc3c7730",
+              "parentUUID": "8cfe97ab-ede7-4666-9add-3f463699e2f2",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "d8756f89-5e1f-4a38-a855-0deafc3c7730"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 4875,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": true,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}
