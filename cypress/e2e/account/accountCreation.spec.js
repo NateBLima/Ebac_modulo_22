@@ -1,3 +1,4 @@
+import { faker } from '@faker-js/faker';
 import { AccountPage } from '../../pages/accountPage';
 
 const accountPage = new AccountPage();
@@ -9,19 +10,24 @@ describe('Criação de Conta - Ecommerce', () => {
   });
 
   it('Deve criar uma conta com sucesso', () => {
-    const email = 'nateqa1708@ebac.com.br';
+    // Gera massa de dados a cada execução
+    const email = faker.internet.email();
+    const password = faker.internet.password(10); // mínimo de 10 caracteres
+    const firstName = faker.person.firstName();
+    const lastName = faker.person.lastName();
+    const mobile = faker.phone.number('##9########');
 
     accountPage.fillForm({
-      firstName: 'Nathan',
-      lastName: 'Brandão',
-      password: 'test1234',
+      firstName,
+      lastName,
+      password,
       email,
-      mobile: '31999999999'
+      mobile
     });
 
     accountPage.submitForm();
     accountPage.profileConfirm();
 
-    cy.contains('Brandão').should('be.visible');
+    cy.contains(lastName).should('be.visible');
   });
 });
