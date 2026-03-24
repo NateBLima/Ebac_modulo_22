@@ -28,5 +28,12 @@ describe('Criação de Conta - Ecommerce', () => {
     accountPage.profileConfirm();
 
     cy.contains(lastName).should('be.visible');
+    cy.writeFile('cypress/fixtures/user.json', {
+      firstName,
+      lastName,
+      email,
+      password,
+      mobile
+    });
   });
 });

@@ -7,8 +7,10 @@ describe('Checkout Flow - Ecommerce', () => {
   });
 
   it('Deve realizar um checkout completo com sucesso', () => {
-    login('nateqa1708@ebac.com.br', 'test1234');
-    addItemToCart();
-    proceedToCheckout();
+    cy.fixture('user.json').then((user) => {
+      login(user.email, user.password);
+      addItemToCart();
+      proceedToCheckout();
+    });
   });
 });
